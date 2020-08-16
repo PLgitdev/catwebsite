@@ -1,7 +1,7 @@
 import React from "react";
 import Nav from "react-bootstrap/Nav";
 import { Link } from "react-router-dom";
-import { NavItem, NavLink } from "react-bootstrap";
+import { NavItem } from "react-bootstrap";
 
 const Tabs = () => {
   const links = [
@@ -10,12 +10,10 @@ const Tabs = () => {
       name: "Sign up",
     },
     {
-      link: "/faq",
-      name: "Faq",
+      link: "/cantinformation",
     },
     {
-      link: "/catinfo",
-      name: "Cat Information",
+      link: "/faqc",
     },
   ];
 
@@ -24,10 +22,8 @@ const Tabs = () => {
       {links.map((key, index) => (
         <Link key={index} to={`${key.link}`}>
           <NavItem>
-            <NavLink>
-              {key.name}
-              {console.log(key)}
-            </NavLink>
+            {key.name}
+            {console.log(key)}
           </NavItem>
         </Link>
       ))}
