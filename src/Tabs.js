@@ -13,7 +13,7 @@ const Tabs = () => {
       link: "/cantinformation",
     },
     {
-      link: "/faqc",
+      link: "/faq",
     },
   ];
 
