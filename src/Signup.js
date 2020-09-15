@@ -1,10 +1,9 @@
 import React from "react";
 import { useState } from "react";
-import Input from "react-validation/build/input";
 
 export const Signup = (props) => {
   const { history } = props;
-  const uRegEx = /^(?=[a-zA-Z0-9._])(?!.*[_.]).{2,20}$/;
+  const uRegEx = /^(?=[a-zA-Z0-9._])(?=[_.]).{2,20}$/;
   const pRegEx = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%]).{8,}$/;
   const [username, setUsername] = useState("");
   const [pass, setPass] = useState("");
@@ -18,19 +17,17 @@ export const Signup = (props) => {
     password: pass,
     passwordConfirmation: passC,
   };
-  //the reg ex is not acting as it should i must change it
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(e);
-    console.log("Post to database, create user", usernameV);
     //if (errorU) {e.}
     if (
       usernameV !== undefined ||
       usernameV !== null ||
-      errorU ||
-      errorP ||
-      errorPC
+      !errorU ||
+      !errorP ||
+      !errorPC
     ) {
       history.push("/step-two", usernameV);
     } else {
@@ -50,10 +47,11 @@ export const Signup = (props) => {
         setUsername(value);
         if (!value.match(uRegEx)) {
           setErrorU(true);
-          console.log("there is an error in your username", errorU);
+          console.log("there is an error in your username");
           console.log(errorU);
         } else {
           setErrorU(false);
+          console.log(errorU);
         }
         break;
       case "pass":

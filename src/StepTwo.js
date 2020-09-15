@@ -5,13 +5,15 @@ import { useState } from "react";
 export const StepTwo = (props) => {
   console.log(props);
   const { history } = props;
+  const eRegEx = /^([\\w\\d]){1,30}(?=.[@])[\\w\\d]{2,30}(?=.[.])(?=[\\w]){3,}$/;
   const { location } = history;
   const { state } = location;
   const value = state;
   const [email, setEmail] = useState("");
   const [emailC, setEmailC] = useState("");
-
-  //state from the sign in prop needs to be added to email prop
+  const [errorE, setErrorE] = useState("");
+  const [errorEC, setErrorEC] = useState("");
+  const red = { border: "2px solid red" };
   const emailV = {
     ...value,
     email: email,
@@ -24,7 +26,7 @@ export const StepTwo = (props) => {
     //  console.log(value);
     //  console.log(props);
     console.log("Post to database, create user", emailV);
-    value !== undefined || value !== null
+    value !== undefined || value !== null || !errorE || !errorEC
       ? history.push("/step-three", emailV)
       : console.log("You have an error, value = undefined or null", emailV);
   };
@@ -35,13 +37,14 @@ export const StepTwo = (props) => {
       case "email":
         setEmail(value);
         console.log(value);
+        !value.match(eRegEx) ? setErrorE(true) : setErrorE(false);
         break;
       case "emailC":
         setEmailC(value);
-        console.log(value);
+        !value.match(eRegEx) ? setErrorEC(true) : setErrorEC(false);
         break;
       default:
-        console.log("you have ");
+        console.log("name error ");
         break;
     }
   };
@@ -49,8 +52,18 @@ export const StepTwo = (props) => {
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <input name="email" value={email} onChange={(e) => handleChange(e)} />
-        <input name="emailC" value={emailC} onChange={(e) => handleChange(e)} />
+        <input
+          name="email"
+          style={errorE ? red : null}
+          value={email}
+          onChange={(e) => handleChange(e)}
+        />
+        <input
+          name="emailC"
+          style={errorEC ? red : null}
+          value={emailC}
+          onChange={(e) => handleChange(e)}
+        />
         <button type="submit">Submit</button>
       </form>
     </div>

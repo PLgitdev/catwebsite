@@ -8,7 +8,7 @@ const StepThree = (props) => {
   const url = "http://localhost:8080/api/user";
   const fullValue = JSON.stringify({
     ...value,
-    image: "image", //image,
+    //image: "image", //image,
   });
 
   const params = {
