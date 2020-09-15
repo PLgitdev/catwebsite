@@ -1,9 +1,7 @@
 import React from "react";
 import { Carousel } from "react-bootstrap";
 import { useState } from "react";
-import Catone from "./catone.png";
-import Cattwo from "./cattwo.jpg";
-import Catthree from "./catthree.jpg";
+import LambdaTwo from "./lambda-4-580539.png";
 
 const Slideshow = () => {
   const [index, setIndex] = useState(0);
@@ -11,31 +9,31 @@ const Slideshow = () => {
   const handleSelect = (selectedIndex, e) => {
     setIndex(selectedIndex);
   };
-  const cats = [
+  const pics = [
     {
       id: 1,
-      img: Catone,
+      img: LambdaTwo,
       label: "label one",
     },
     {
       id: 2,
-      img: Cattwo,
+      img: LambdaTwo,
       label: "label two",
     },
     {
       id: 3,
-      img: Catthree,
+      img: LambdaTwo,
       label: "label three",
     },
   ];
 
   return (
     <Carousel activeIndex={index} onSelect={handleSelect}>
-      {cats.map((cat, index) => (
+      {pics.map((cat, index) => (
         <Carousel.Item key={cat.id}>
           <img
             className="d-block w-100"
-            height="500px"
+            height="700 px"
             src={cat.img}
             alt={index}
           />

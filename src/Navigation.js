@@ -6,7 +6,7 @@ import ProfDropdown from "./ProfDropdown.js";
 const Navigation = () => {
   return (
     <Navbar fill bg="light">
-      <Navbar.Brand> Cat website </Navbar.Brand>
+      <Navbar.Brand> roundsquare </Navbar.Brand>
       <Tabs />
       <ProfDropdown />
     </Navbar>
