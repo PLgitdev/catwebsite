@@ -22,7 +22,7 @@ const StepThree = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fullValue !== undefined || fullValue !== null
+    (fullValue !== undefined) & (fullValue !== null)
       ? fetch(url, params)
           .then((res) => {
             console.log(res);

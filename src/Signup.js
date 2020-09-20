@@ -23,11 +23,12 @@ export const Signup = (props) => {
     console.log(e);
     //if (errorU) {e.}
     if (
-      usernameV !== undefined ||
-      usernameV !== null ||
-      !errorU ||
-      !errorP ||
-      !errorPC
+      (usernameV !== undefined) &
+      (usernameV !== null) &
+      !errorU &
+      !errorP &
+      !errorPC &
+      (usernameV.passwordConfirmation !== usernameV.password)
     ) {
       history.push("/step-two", usernameV);
     } else {

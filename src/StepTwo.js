@@ -26,7 +26,7 @@ export const StepTwo = (props) => {
     //  console.log(value);
     //  console.log(props);
     console.log("Post to database, create user", emailV);
-    value !== undefined || value !== null || !errorE || !errorEC
+    (value !== undefined) & (value !== null) & !errorE & !errorEC
       ? history.push("/step-three", emailV)
       : console.log("You have an error, value = undefined or null", emailV);
   };
