@@ -7,6 +7,9 @@ const Navigation = () => {
   return (
     <Navbar fill bg="light">
       <Navbar.Brand> roundsquare </Navbar.Brand>
+      {
+        // user signed in ? prof dropdown : tabs
+      }
       <Tabs />
       <ProfDropdown />
     </Navbar>

@@ -3,14 +3,14 @@ import { useState } from "react";
 
 export const Signup = (props) => {
   const { history } = props;
-  const uRegEx = /^(?=[a-zA-Z0-9._])(?=[_.]).{2,20}$/;
+  const uRegEx = /^(?=[a-zA-Z0-9._]).{2,20}$/;
   const pRegEx = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%]).{8,}$/;
   const [username, setUsername] = useState("");
   const [pass, setPass] = useState("");
   const [passC, setPassC] = useState("");
-  const [errorU, setErrorU] = useState(false);
-  const [errorP, setErrorP] = useState(false);
-  const [errorPC, setErrorPC] = useState(false);
+  const [errorU, setErrorU] = useState();
+  const [errorP, setErrorP] = useState();
+  const [errorPC, setErrorPC] = useState();
   const red = { border: "2px solid red" };
   const usernameV = {
     username: username,
@@ -61,7 +61,7 @@ export const Signup = (props) => {
           setErrorP(true);
           console.log("there is an error in your password", errorP);
         } else {
-          setErrorU(false);
+          setErrorP(false);
         }
         break;
       case "passC":
