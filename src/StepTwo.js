@@ -5,7 +5,7 @@ import { useState } from "react";
 export const StepTwo = (props) => {
   console.log(props);
   const { history } = props;
-  const eRegEx = /^([\\w\\d]){1,30}(?=.[@])[\\w\\d]{2,30}(?=.[.])(?=[\\w]){3,}$/;
+  const eRegEx = /^(.+)@(.+){2,}\.(.+){2,}$/;
   const { location } = history;
   const { state } = location;
   const value = state;
@@ -26,9 +26,13 @@ export const StepTwo = (props) => {
     //  console.log(value);
     //  console.log(props);
     console.log("Post to database, create user", emailV);
-    (value !== undefined) & (value !== null) & !errorE & !errorEC
+    (value !== undefined) &
+    (value !== null) &
+    !errorE &
+    !errorEC &
+    (emailV.email === emailV.emailConfirmation)
       ? history.push("/step-three", emailV)
-      : console.log("You have an error, value = undefined or null", emailV);
+      : alert("You have an error in your input");
   };
 
   const handleChange = (e) => {

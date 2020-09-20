@@ -28,7 +28,7 @@ export const Signup = (props) => {
       !errorU &
       !errorP &
       !errorPC &
-      (usernameV.passwordConfirmation !== usernameV.password)
+      (usernameV.passwordConfirmation === usernameV.password)
     ) {
       history.push("/step-two", usernameV);
     } else {
