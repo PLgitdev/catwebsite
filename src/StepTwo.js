@@ -59,8 +59,9 @@ export const StepTwo = (props) => {
     <div className="background">
       <img className="img-two" src={RS} alt="rs" />
       <div className="form-container">
-        <h1>Email</h1>
+        <h1>Enter your email</h1>
         <form onSubmit={handleSubmit}>
+          <label> email</label>
           <input
             type="text"
             name="email"
@@ -68,6 +69,7 @@ export const StepTwo = (props) => {
             value={email}
             onChange={(e) => handleChange(e)}
           />
+          <label> email confirmation</label>
           <input
             type="text"
             name="emailC"
