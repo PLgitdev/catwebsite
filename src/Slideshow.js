@@ -1,9 +1,9 @@
 import React from "react";
 import { Carousel } from "react-bootstrap";
 import { useState } from "react";
-import RS from "./roundsquare1.png";
-import RS2 from "./roundsquare2.png";
-import RS3 from "./roundsquare3.png";
+import RS from "./assets/background1.png";
+import RS2 from "./assets/background2.png";
+import RS3 from "./assets/background3.png";
 
 const Slideshow = () => {
   const [index, setIndex] = useState(0);
@@ -35,7 +35,7 @@ const Slideshow = () => {
         <Carousel.Item key={cat.id}>
           <img
             className="d-block w-100"
-            height="700 px"
+            height="900 px"
             src={cat.img}
             alt={index}
           />
