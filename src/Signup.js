@@ -1,5 +1,7 @@
 import React from "react";
 import { useState } from "react";
+import { input, label } from "./SignupStylesheet.css";
+import RS from "./roundsquare3.png";
 
 export const Signup = (props) => {
   const { history } = props;
@@ -89,31 +91,43 @@ export const Signup = (props) => {
   return (
     //  ? push to a page through route that says you have already signed up :
     // make the color change validation
-    <div>
-      <form>
-        <label> username </label>
-        <input
-          name="username"
-          style={errorU ? red : null}
-          value={username}
-          onChange={(e) => handleChange(e)}
-        />
-        <label> Password </label>
-        <input
-          style={errorP ? red : null}
-          name="pass"
-          value={pass}
-          onChange={(e) => handleChange(e)}
-        />
-        <label> Password Confirmation</label>
-        <input
-          style={errorPC ? red : null}
-          name="passC"
-          value={passC}
-          onChange={(e) => handleChange(e)}
-        />
-        <input type="submit" value="Submit" onClick={(e) => handleSubmit(e)} />
-      </form>
+    <div className="background">
+      <img className="img" src={RS} alt="rs" />
+      <div className="form-container">
+        <h1>Signup</h1>
+        <form>
+          <label className="rows"> username </label>
+          <input
+            type="text"
+            name="username"
+            style={errorU ? red : null}
+            value={username}
+            onChange={(e) => handleChange(e)}
+          />
+          <label className="rows"> Password </label>
+          <input
+            type="password"
+            style={errorP ? red : null}
+            name="pass"
+            value={pass}
+            onChange={(e) => handleChange(e)}
+          />
+          <label className="rows"> Password Confirmation</label>
+          <input
+            type="password"
+            style={errorPC ? red : null}
+            name="passC"
+            value={passC}
+            onChange={(e) => handleChange(e)}
+          />
+          <input
+            className="btn"
+            type="submit"
+            value="Submit"
+            onClick={(e) => handleSubmit(e)}
+          />
+        </form>
+      </div>
     </div>
   );
 };

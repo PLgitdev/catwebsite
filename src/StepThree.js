@@ -1,4 +1,6 @@
 import React from "react";
+import { input, label } from "./SignupStylesheet.css";
+import RS from "./roundsquare1.png";
 
 const StepThree = (props) => {
   const { history } = props;
@@ -35,10 +37,19 @@ const StepThree = (props) => {
   };
 
   return (
-    <div>
-      <form>
-        <input type="submit" value="Submit" onClick={(e) => handleSubmit(e)} />
-      </form>
+    <div className="background">
+      <img className="img-three" src={RS} alt="rs" />
+      <div className="form-container">
+        <h1>Submit and Sign up!</h1>
+        <form>
+          <input
+            className="btn"
+            type="submit"
+            value="Submit"
+            onClick={(e) => handleSubmit(e)}
+          />
+        </form>
+      </div>
     </div>
   );
 };

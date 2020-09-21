@@ -1,7 +1,9 @@
 import React from "react";
 import { Carousel } from "react-bootstrap";
 import { useState } from "react";
-import LambdaTwo from "./lambda-4-580539.png";
+import RS from "./roundsquare1.png";
+import RS2 from "./roundsquare2.png";
+import RS3 from "./roundsquare3.png";
 
 const Slideshow = () => {
   const [index, setIndex] = useState(0);
@@ -12,17 +14,17 @@ const Slideshow = () => {
   const pics = [
     {
       id: 1,
-      img: LambdaTwo,
+      img: RS,
       label: "label one",
     },
     {
       id: 2,
-      img: LambdaTwo,
+      img: RS2,
       label: "label two",
     },
     {
       id: 3,
-      img: LambdaTwo,
+      img: RS3,
       label: "label three",
     },
   ];

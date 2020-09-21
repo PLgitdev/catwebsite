@@ -1,5 +1,7 @@
 import React from "react";
 import { useState } from "react";
+import { input, label } from "./SignupStylesheet.css";
+import RS from "./roundsquare2.png";
 
 //step two email verification
 export const StepTwo = (props) => {
@@ -54,22 +56,30 @@ export const StepTwo = (props) => {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <input
-          name="email"
-          style={errorE ? red : null}
-          value={email}
-          onChange={(e) => handleChange(e)}
-        />
-        <input
-          name="emailC"
-          style={errorEC ? red : null}
-          value={emailC}
-          onChange={(e) => handleChange(e)}
-        />
-        <button type="submit">Submit</button>
-      </form>
+    <div className="background">
+      <img className="img-two" src={RS} alt="rs" />
+      <div className="form-container">
+        <h1>Email</h1>
+        <form onSubmit={handleSubmit}>
+          <input
+            type="text"
+            name="email"
+            style={errorE ? red : null}
+            value={email}
+            onChange={(e) => handleChange(e)}
+          />
+          <input
+            type="text"
+            name="emailC"
+            style={errorEC ? red : null}
+            value={emailC}
+            onChange={(e) => handleChange(e)}
+          />
+          <button className="btn" type="submit">
+            Submit
+          </button>
+        </form>
+      </div>
     </div>
   );
 };
