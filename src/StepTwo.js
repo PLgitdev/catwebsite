@@ -61,7 +61,7 @@ export const StepTwo = (props) => {
       <div className="form-container">
         <h1>Enter your email</h1>
         <form onSubmit={handleSubmit}>
-          <label> email</label>
+          <label> Email</label>
           <input
             type="text"
             name="email"
@@ -69,7 +69,7 @@ export const StepTwo = (props) => {
             value={email}
             onChange={(e) => handleChange(e)}
           />
-          <label> email confirmation</label>
+          <label> Email Confirmation</label>
           <input
             type="text"
             name="emailC"

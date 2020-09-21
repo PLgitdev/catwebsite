@@ -96,7 +96,7 @@ export const Signup = (props) => {
       <div className="form-container">
         <h1>Signup</h1>
         <form>
-          <label className="rows"> username </label>
+          <label className="rows"> Username </label>
           <input
             type="text"
             name="username"
