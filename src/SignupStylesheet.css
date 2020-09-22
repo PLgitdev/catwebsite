@@ -66,11 +66,14 @@ h1 {
 }
 
 .img {
-  height: 500px;
+  width: 50%;
+  margin-top: 150%;
+  margin: 0%;
 }
 .img-two {
-  max-height: 550px;
+  width: 75%;
+  height: 11%;
 }
 .img-three {
-  max-height: 550px;
+  max-height: 650px;
 }
