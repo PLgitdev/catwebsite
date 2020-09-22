@@ -46,10 +46,6 @@ export const StepTwo = (props) => {
         console.log(value);
         !value.match(eRegEx) ? setErrorE(true) : setErrorE(false);
         break;
-      case "emailC":
-        setEmailC(value);
-        !value.match(eRegEx) ? setErrorEC(true) : setErrorEC(false);
-        break;
       default:
         console.log("name error ");
         break;
@@ -60,7 +56,7 @@ export const StepTwo = (props) => {
     <div className="background">
       <img className="img-two" src={RS} alt="rs" />
       <div className="form-container">
-        <h1>Enter your email</h1>
+        <h1>Enter Your Email</h1>
         <form onSubmit={handleSubmit}>
           <label> Email</label>
           <input
@@ -68,14 +64,6 @@ export const StepTwo = (props) => {
             name="email"
             style={errorE ? red : null}
             value={email}
-            onChange={(e) => handleChange(e)}
-          />
-          <label> Email Confirmation</label>
-          <input
-            type="text"
-            name="emailC"
-            style={errorEC ? red : null}
-            value={emailC}
             onChange={(e) => handleChange(e)}
           />
           <button className="btn" type="submit">
