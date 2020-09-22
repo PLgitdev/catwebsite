@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { input, label } from "./SignupStylesheet.css";
+import { Link } from "react-router-dom";
 import RS from "./roundsquare2.png";
 
 //step two email verification
@@ -80,6 +81,9 @@ export const StepTwo = (props) => {
           <button className="btn" type="submit">
             Submit
           </button>
+          <Link to={`/`}>
+            <button className="btn-two">Exit</button>
+          </Link>
         </form>
       </div>
     </div>

@@ -4,7 +4,7 @@ const GroupsList = () => {
   const [hasErrors, setErrors] = useState(false);
 
   useEffect(() => {
-    fetch("http://localhost:8080/api/groups", { mode: "cors" })
+    fetch("http://localhost:8080/api/user", { mode: "cors" })
       .then((response) => response.json())
       .then((response) => setGroups(response))
       .catch(() => setErrors(true));

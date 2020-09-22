@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { input, label } from "./SignupStylesheet.css";
 import RS from "./roundsquare1.png";
 
@@ -6,6 +7,7 @@ const StepThree = (props) => {
   const { history } = props;
   const { location } = history;
   const { state } = location;
+  const [response, setResponse] = useState();
   const value = state;
   const url = "http://localhost:8080/api/user";
   const fullValue = JSON.stringify({
@@ -27,9 +29,9 @@ const StepThree = (props) => {
     (fullValue !== undefined) & (fullValue !== null)
       ? fetch(url, params)
           .then((res) => {
-            console.log(res);
+            setResponse(res);
           })
-          .then(history.push("/sign-up-finish"))
+          .then(history.push("/sign-up-finish", fullValue))
           .catch((err) => {
             console.log(err);
           })
@@ -48,6 +50,9 @@ const StepThree = (props) => {
             value="Submit"
             onClick={(e) => handleSubmit(e)}
           />
+          <Link to={`/`}>
+            <button className="btn-two">Exit</button>
+          </Link>
         </form>
       </div>
     </div>

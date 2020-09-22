@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { input, label } from "./SignupStylesheet.css";
 import RS from "./roundsquare3.png";
+import { Link } from "react-router-dom";
 
 export const Signup = (props) => {
   const { history } = props;
@@ -126,6 +127,9 @@ export const Signup = (props) => {
             value="Submit"
             onClick={(e) => handleSubmit(e)}
           />
+          <Link to={`/`}>
+            <button className="btn-two">Exit</button>
+          </Link>
         </form>
       </div>
     </div>

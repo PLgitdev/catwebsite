@@ -39,9 +39,7 @@ const Slideshow = () => {
             src={cat.img}
             alt={index}
           />
-          <Carousel.Caption key={index}>
-            <h3>{cat.label}</h3>
-          </Carousel.Caption>
+          <Carousel.Caption key={index}></Carousel.Caption>
         </Carousel.Item>
       ))}
     </Carousel>
