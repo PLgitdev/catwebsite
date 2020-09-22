@@ -29,11 +29,7 @@ export const StepTwo = (props) => {
     //  console.log(value);
     //  console.log(props);
     console.log("Post to database, create user", emailV);
-    (value !== undefined) &
-    (value !== null) &
-    !errorE &
-    !errorEC &
-    (emailV.email === emailV.emailConfirmation)
+    (value !== undefined) & (value !== null) & !errorE & !errorEC
       ? history.push("/step-three", emailV)
       : alert("You have an error in your input");
   };
