@@ -5,10 +5,7 @@ import {} from "./SignupStylesheet.css";
 export const SignupFinish = (props) => {
   const style = {
     width: "100%",
-    height: "900px",
-  };
-  const styleTwo = {
-    position: "absolute",
+    height: "800px",
   };
 
   return (
