@@ -8,7 +8,7 @@ const Navigation = () => {
     <Navbar fill bg="light">
       <Navbar.Brand> roundsquare </Navbar.Brand>
       <Tabs />
-      <ProfDropdown />
+      {/*<ProfDropdown />*/}
     </Navbar>
   );
 };
