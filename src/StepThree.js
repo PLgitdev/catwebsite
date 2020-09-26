@@ -1,13 +1,11 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { input, label } from "./SignupStylesheet.css";
 import RS from "./roundsquare1.png";
 
 const StepThree = (props) => {
   const { history } = props;
   const { location } = history;
   const { state } = location;
-  const [response, setResponse] = useState();
   const value = state;
   const url = "http://localhost:8080/api/user";
   const fullValue = JSON.stringify({
@@ -29,9 +27,9 @@ const StepThree = (props) => {
     (fullValue !== undefined) & (fullValue !== null)
       ? fetch(url, params)
           .then((res) => {
-            setResponse(res);
+            console.log(res);
           })
-          .then(history.push("/sign-up-finish", fullValue))
+          .then(history.push("/sign-up-finish", value))
           .catch((err) => {
             console.log(err);
           })

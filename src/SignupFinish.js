@@ -8,11 +8,13 @@ export const SignupFinish = (props) => {
     height: "780px",
   };
 
+  console.log(props);
   return (
     <div>
       <img src={background} style={style} alt="background"></img>
       <div className="form-container">
-        <h1>Thank you {`${props.history.location.state.username}`} </h1>
+        <h1>Thank you</h1>
+        <h2>{`${props.history.location.state.username}`}</h2>
         <Link to={`/`}>
           <button className="btn-two">Exit</button>
         </Link>
