@@ -13,14 +13,11 @@ export const StepTwo = (props) => {
   const { state } = location;
   const value = state;
   const [email, setEmail] = useState("");
-  const [emailC, setEmailC] = useState("");
   const [errorE, setErrorE] = useState("");
-  const [errorEC, setErrorEC] = useState("");
   const red = { border: "2px solid red" };
   const emailV = {
     ...value,
     email: email,
-    emailConfirmation: emailC,
   };
 
   const handleSubmit = (e) => {
@@ -29,7 +26,7 @@ export const StepTwo = (props) => {
     //  console.log(value);
     //  console.log(props);
     console.log("Post to database, create user", emailV);
-    (value !== undefined) & (value !== null) & !errorE & !errorEC
+    (value !== undefined) & (value !== null) & !errorE
       ? history.push("/step-three", emailV)
       : alert("You have an error in your input");
   };
